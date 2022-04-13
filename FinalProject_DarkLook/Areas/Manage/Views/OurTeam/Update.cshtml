@@ -1,0 +1,67 @@
+﻿@model OurTeam
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <img style="max-width:100%" src="~/images/@Model.Image" alt="Alternate Text" />
+        </li>
+    </ul>
+</div>
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name">
+        <span class="alert-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Profession"></label>
+        <input class="form-control" asp-for="@Model.Profession">
+        <span class="alert-danger" asp-validation-for="@Model.Profession"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Desc"></label>
+        <input class="form-control" asp-for="@Model.Desc">
+        <span class="alert-danger" asp-validation-for="@Model.Desc"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.FaceBookUrl"></label>
+        <input class="form-control" asp-for="@Model.FaceBookUrl">
+        <span class="alert-danger" asp-validation-for="@Model.FaceBookUrl"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.TwitterUrl"></label>
+        <input class="form-control" asp-for="@Model.TwitterUrl">
+        <span class="alert-danger" asp-validation-for="@Model.TwitterUrl"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Url"></label>
+        <input class="form-control" asp-for="@Model.Url">
+        <span class="alert-danger" asp-validation-for="@Model.Url"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.PinterestUrl"></label>
+        <input class="form-control" asp-for="@Model.PinterestUrl">
+        <span class="alert-danger" asp-validation-for="@Model.PinterestUrl"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.BeUrl"></label>
+        <input class="form-control" asp-for="@Model.BeUrl''">
+        <span class="alert-danger" asp-validation-for="@Model.BeUrl"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.File"></label>
+        <input class="form-control" accept="image/*" asp-for="@Model.File">
+        <span class="alert-danger" asp-validation-for="@Model.File"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+

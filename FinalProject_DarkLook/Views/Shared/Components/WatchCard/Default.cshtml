@@ -1,0 +1,33 @@
+﻿@model WatchCard
+    <div class="product-grid">
+        <div class="item">
+            <div class="product-thumb">
+               
+                    <div class="image product-imageblock">
+                        <a href="~/product_detail_page.html"> <img data-name="product_image" src="~/images/product/@Model.Image" alt="iPod Classic" title="iPod Classic" class="img-responsive"> <img src="~/images/product/@Model.HoverImage" alt="iPod Classic" title="iPod Classic" class="img-responsive"> </a>
+                        <div class="button-group text-center">
+                            
+                            <div class="add-to-cart"><a href="~/#"><span>Add to cart</span></a></div>
+                        </div>
+                    </div>
+                    <div class="caption product-detail text-center">
+                        <div class="rating-block">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (i <= Model.Star)
+                                {
+                                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                                    continue;
+                                }
+                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                            }
+                        </div>
+                        <h6 data-name="product_name" class="product-name"><a href="~/#" title="Casual Shirt With Ruffle Hem">@Model.Desc</a></h6>
+                        <span class="price">
+                            <span class="amount"><span class="currencySymbol">$</span>@Model.Price</span>
+                        </span>
+                    </div>
+                
+            </div>
+        </div>
+    </div>

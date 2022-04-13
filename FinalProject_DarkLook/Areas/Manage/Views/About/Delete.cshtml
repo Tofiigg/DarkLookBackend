@@ -1,0 +1,26 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <img style="max-width:100%" src="~/images/@Model.Image" alt="Alternate Text" />
+        </li>
+        <li class="list-group-item">Id: @Model.Title</li>
+        <li class="list-group-item">Id: @Model.Desc</li>
+        <li class="list-group-item">Id: @Model.Html</li>
+        <li class="list-group-item">Id: @Model.Bootstrap</li>
+        <li class="list-group-item">Id: @Model.Css</li>
+    </ul>
+
+    <a class="btn btn-primary" asp-action="Index">Go List</a>
+    <h1>Silmek Isdediynize Eminsinizmi:</h1>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>

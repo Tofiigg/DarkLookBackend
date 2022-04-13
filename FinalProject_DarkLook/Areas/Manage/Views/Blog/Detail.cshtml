@@ -1,0 +1,24 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <img style="max-width:100%" src="~/images/blog/@Model.Image" alt="Alternate Text" />
+        </li>
+        <li class="list-group-item">Id: @Model.Id</li>
+        <li class="list-group-item">Title: @Model.Title</li>
+        <li class="list-group-item">Description: @Model.Desc</li>
+        <li class="list-group-item">Day: @Model.Info</li>
+
+        <li class="list-group-item">Day: @Model.Date</li>
+        <li class="list-group-item">Desc2: @Model.RedSide</li>
+        <li class="list-group-item">RedInfo: @Model.AfterRed</li>
+        @*<li class="list-group-item">Info: @Model.Icon</li>*@
+    </ul>
+
+    <a class="btn btn-primary" asp-action="Index">Go List</a>
+</div>

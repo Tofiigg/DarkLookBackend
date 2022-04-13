@@ -1,0 +1,82 @@
+﻿@model WatchCard
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label asp-for="MainImageFile"></label>
+        <input class="form-control" accept="image/*" asp-for="MainImageFile">
+        <span class="alert-danger" asp-validation-for="MainImageFile"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="HoverImageFile"></label>
+        <input class="form-control" accept="image/*" asp-for="HoverImageFile">
+        <span class="alert-danger" asp-validation-for="HoverImageFile"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Desc"></label>
+        <input class="form-control" asp-for="Desc">
+        <span class="alert-danger" asp-validation-for="Desc"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DescDetail"></label>
+        <input class="form-control" asp-for="DescDetail">
+        <span class="alert-danger" asp-validation-for="DescDetail"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Brand"></label>
+        <input class="form-control" asp-for="Brand">
+        <span class="alert-danger" asp-validation-for="Brand"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price"></label>
+        <input class="form-control" accept="image/*" asp-for="Price">
+        <span class="alert-danger" asp-validation-for="Price"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Star"></label>
+        <input class="form-control" asp-for="Star">
+        <span class="alert-danger" asp-validation-for="Star"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Stock"></label>
+        <input class="form-control" asp-for="Stock">
+        <span class="alert-danger" asp-validation-for="Stock"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Code"></label>
+        <input class="form-control" asp-for="Code">
+        <span class="alert-danger" asp-validation-for="Code"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="IsFeatured"></label>
+        <input class="form-control" asp-for="IsFeatured">
+        <span class="alert-danger" asp-validation-for="IsFeatured"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="IsBestSeller"></label>
+        <input class="form-control" asp-for="IsBestSeller">
+        <span class="alert-danger" asp-validation-for="IsBestSeller"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="IsNewArrivals"></label>
+        <input class="form-control" asp-for="IsNewArrivals">
+        <span class="alert-danger" asp-validation-for="IsNewArrivals"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="IsDealsOftheWeek"></label>
+        <input class="form-control" asp-for="IsDealsOftheWeek">
+        <span class="alert-danger" asp-validation-for="IsDealsOftheWeek"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

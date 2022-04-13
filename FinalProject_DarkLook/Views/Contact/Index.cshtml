@@ -1,0 +1,71 @@
+﻿@model ContactVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container mt_30">
+    <div class="row ">
+        <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
+            <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
+                <div class="nav-responsive">
+                    <div class="heading-part">
+                        <h2 class="main_title">Top category</h2>
+                    </div>
+                    <ul class="nav  main-navigation collapse in">
+                        @foreach (Category categoryi in Model.Categories)
+                        {
+                            <li><a href="~/#">@categoryi.Name</a></li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="left_banner left-sidebar-widget mt_30 mb_40"> <a href="~/#"><img src="~/images/left1.jpg" alt="Left Banner" class="img-responsive" /></a> </div>
+        </div>
+        <div class="col-sm-8 col-lg-9 mtb_20">
+            <!-- contact  -->
+            <div class="row">
+                <div class="col-md-4 col-xs-12 contact">
+                    <div class="location mb_50">
+                        <h5 class="capitalize mb_20"><strong>Our Location</strong></h5>
+                        <div class="address">
+                            @Html.Raw(Model.contact.Location)
+                        </div>
+                        <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>@Model.contact.Number</div>
+                    </div>
+                    <div class="Career mb_50">
+                        <h5 class="capitalize mb_20"><strong>Careers</strong></h5>
+                        <div class="address">@Model.contact.Careers</div>
+                        <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="~/mailto:careers@yourdomain.com" target="_top">@Model.contact.Email</a></div>
+                    </div>
+                    <div class="Hello mb_50">
+                        <h5 class="capitalize mb_20"><strong>Say Hello</strong></h5>
+                        <div class="address">@Model.contact.SayHello</div>
+                        <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="~/mailto:info@yourdomailname.com" target="_top">@Model.contact.InfoEmail</a></div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-xs-12 contact-form mb_50">
+                    <!-- start Contact FORM -->
+                    <div id="contact_form">
+                        <form id="contact_body" method="post" action="">
+
+                            <input class="full-with-form " asp-for="@Model.Username" type="text" placeholder="Username" data-required="true" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+
+
+                            <input class="full-with-form  mt_30" type="email" asp-for="@Model.Email" placeholder="Email Address" data-required="true" />
+
+                            <textarea class="full-with-form  mt_30" asp-for="@Model.Text" placeholder="Message" data-required="true"></textarea>
+
+                            <button class="btn mt_30" type="submit">Send Message</button>
+                        </form>
+                        <div id="contact_results"></div>
+                    </div>
+                    <!-- END Contact FORM -->
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>

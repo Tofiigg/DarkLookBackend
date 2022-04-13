@@ -1,0 +1,42 @@
+﻿@model WatchCard
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+
+        <li class="list-group-item">
+            Image
+            <img style="max-width:100%" src="~/images/product/@Model.Image" alt="Alternate Text" />
+        </li>
+        <li class="list-group-item">
+            Hover Image
+            <img style="max-width:100%" src="~/images/product/@Model.HoverImage" alt="Alternate Text" />
+        </li>
+
+        <li class="list-group-item">@Model.Id</li>
+        <li class="list-group-item">Desc:@Model.Desc</li>
+        <li class="list-group-item">DealsOFWeek: @Model.IsDealsOftheWeek</li>
+        <li class="list-group-item">Arrivial: @Model.IsNewArrivals</li>
+        <li class="list-group-item">BestSeller: @Model.IsBestSeller</li>
+        <li class="list-group-item">Featured: @Model.IsFeatured</li>
+        <li class="list-group-item">Code: @Model.Code</li>
+        <li class="list-group-item">Star: @Model.Star</li>
+        <li class="list-group-item">Stock: @Model.Stock</li>
+        <li class="list-group-item">Brand: @Model.Brand</li>
+        <li class="list-group-item">DescDetail: @Model.DescDetail</li>
+
+
+
+
+
+
+
+
+    </ul>
+
+    <a class="btn btn-primary" asp-action="Index">Go List</a>
+</div>

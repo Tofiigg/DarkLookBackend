@@ -1,0 +1,43 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title">
+        <span class="alert-danger" asp-validation-for="Title"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Desc"></label>
+        <input class="form-control" asp-for="@Model.Desc">
+        <span class="alert-danger" asp-validation-for="@Model.Desc"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Html"></label>
+        <input class="form-control" asp-for="@Model.Html">
+        <span class="alert-danger" asp-validation-for="@Model.Html"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Bootstrap"></label>
+        <input class="form-control" asp-for="@Model.Bootstrap">
+        <span class="alert-danger" asp-validation-for="@Model.Bootstrap"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Css"></label>
+        <input class="form-control" asp-for="@Model.Css">
+        <span class="alert-danger" asp-validation-for="@Model.Css"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="@Model.File"></label>
+        <input class="form-control" accept="image/*" asp-for="@Model.File">
+        <span class="alert-danger" asp-validation-for="@Model.File"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

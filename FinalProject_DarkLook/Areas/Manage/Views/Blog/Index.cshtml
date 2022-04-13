@@ -1,0 +1,85 @@
+﻿@model ICollection<Blog>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1 class="h3 mb-4 text-gray-800">Blog Page</h1>
+
+@if (Model.Count < 15)
+{
+    <div class="d-flex justify-content-end mb-2">
+        <a class="btn btn-primary" asp-action="Create">Create</a>
+    </div>
+}
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Date</th>
+            <th scope="col">Settings</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Blog blog in Model)
+        {
+            <tr>
+                <th scope="row">@blog.Id</th>
+                <td>
+                    <img style= "   border-radius: 100%;
+    object-fit: cover;
+    width: 125px;
+    height: 124px;" src="~/images/blog/@blog.Image" alt="Alternate Text" />
+                </td>
+                <td>@blog.Title)</td>
+                <td>@blog.Date.Value.ToString("dd .MM. yyyy")</td>
+                <td>
+                    <a class="btn btn--primary" asp-action="Detail" asp-route-Id="@blog.Id">Detail</a>
+                    <a class="btn btn-warning" asp-action="Update" asp-route-Id="@blog.Id">Update</a>
+                    <a class=" btn btn-danger" asp-action="Delete" asp-route-Id="@blog.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<div class="d-flex justify-content-center">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+
+            @if (ViewBag.Seltectedpage != 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-action="index" asp-route-page="@(ViewBag.Seltectedpage-1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+
+            }
+
+            @for (int i = 1; i <= ViewBag.TotalPage; i++)
+            {
+                <li class="page-item @(i==ViewBag.Seltectedpage?"active":"")"><a class="page-link" asp-action="index" asp-route-page="@i">@i</a></li>
+
+            }
+
+
+
+            @if (ViewBag.Seltectedpage < ViewBag.TotalPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-action="index" asp-route-page="@(ViewBag.Seltectedpage+1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>

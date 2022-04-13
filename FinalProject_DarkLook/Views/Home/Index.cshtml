@@ -1,0 +1,143 @@
+﻿@model HomeVM
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+<div class="banner">
+    <div class="main-banner owl-carousel">
+        @foreach ( Slider Slider in Model.Sliders)
+            {
+            <div class="item"><a href="~/#"><img src="~/images/@Slider.Image" alt="Main Banner" class="img-responsive" /></a></div>
+            }
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        @foreach (Future future in Model.Futures)
+        {
+            <div class="col-sm-3 mt_20 cms-icon ">
+                <div class="feature-i-left ptb_30 ">
+                    <div class="icon-right @future.Icon"></div>
+                    <h6>@future.Title</h6>
+                    <p>@future.Desc</p>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="row ">
+        <div class="col-sm-12 mt_30">
+            <div id="product-tab" class="mt_10">
+                <div class="heading-part mb_10 ">
+                    <h2 class="main_title">Featured Products</h2>
+                </div>
+                <ul class="nav text-right">
+                    <li class="active"> <a href="~/#nArrivals" data-toggle="tab">New Arrivals</a> </li>
+                    <li><a href="~/#Bestsellers" data-toggle="tab">Bestsellers</a> </li>
+                    <li><a href="~/#Featured" data-toggle="tab">Featured</a> </li>
+                </ul>
+                <div class="tab-content clearfix box">
+                    <div class="tab-pane active" id="nArrivals">
+                        <div class="nArrivals owl-carousel">
+                            @await Html.PartialAsync("_product", Model.Arrival)
+
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="Bestsellers">
+                        <div class="Bestsellers owl-carousel">
+                            @await Html.PartialAsync("_product", Model.BestSeller)
+
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="Featured">
+                        <div class="Featured owl-carousel">
+                            @await Html.PartialAsync("_product", Model.Feature)
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =====  PRODUCT TAB  END ===== -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="cms_banner">
+            <div class="col-xs-12 mt_60">
+                <div id="subbanner4" class="sub-hover">
+                    <div class="sub-img"><a href="~/#"><img src="~/images/sub5.jpg" alt="Sub Banner5" class="img-responsive"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 mtb_10">
+            <!-- =====  PRODUCT TAB  ===== -->
+            <div class="mt_60">
+                <div class="heading-part mb_10 ">
+                    <h2 class="main_title">Deals of the Week</h2>
+                </div>
+                <div class="latest_pro box">
+                    <div class="latest owl-carousel">
+                        @await Html.PartialAsync("_product", Model.DealWeek)
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 mtb_10">
+            <!-- =====  Blog ===== -->
+            <div id="Blog" class="mt_50">
+                <div class="heading-part mb_10 ">
+                    <h2 class="main_title">Latest News</h2>
+                </div>
+                <div class="blog-contain box">
+                    <div class="blog owl-carousel ">
+                        @foreach (News news in Model.News)
+                        {
+                            <div class="item">
+                                <div class="box-holder">
+                                    <div class="thumb post-img">
+                                        <a href="~/#"> <img src="~/images/blog/@news.Image" alt="themini"> </a>
+                                        <div class="date-time text-center">
+                                            <div class="day">@news.Day</div>
+                                            <div class="month">@news.Month</div>
+                                        </div>
+                                        <div class="post-image-hover"> </div>
+                                        <div class="post-info">
+                                            <h6 class="mb_10 text-uppercase"> <a asp-controller="shop" asp-action="index">@news.Title</a> </h6>
+                                            <p>@news.Desc</p>
+                                            <div class="view-blog">
+                                                <div class="read-more pull-right"> <a asp-controller="shop" asp-action="index"> <i class="fa fa-link"></i> read more</a> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+                <!-- =====  Blog end ===== -->
+            </div>
+        </div>
+    </div>
+    <!-- =====  SUB BANNER END  ===== -->
+    <div id="brand_carouse" class="ptb_60 text-center">
+        <div class="type-01">
+            <div class="heading-part mb_10 ">
+                <h2 class="main_title">Brand Logo</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="brand owl-carousel ptb_20">
+                        @foreach (BrandLogo brand in @Model.BrandLogos)
+                        {
+                            <div class="item text-center"> <a href="~/#"><img src="~/images/brand/@brand.Image" alt="Disney" class="img-responsive" /></a> </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- =====  CONTAINER END  ===== -->

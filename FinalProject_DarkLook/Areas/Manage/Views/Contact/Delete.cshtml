@@ -1,0 +1,24 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+
+        <li class="list-group-item">Price: @Model.Location</li>
+        <li class="list-group-item">Order: @Model.Number</li>
+        <li class="list-group-item">Order: @Model.Careers</li>
+        <li class="list-group-item">Order: @Model.SayHello</li>
+        <li class="list-group-item">Order: @Model.InfoEmail</li>
+
+    </ul>
+
+    <a class="btn btn-primary" asp-action="Index">Go List</a>
+    <h1>Silmek Isdediynize Eminsinizmi:</h1>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+

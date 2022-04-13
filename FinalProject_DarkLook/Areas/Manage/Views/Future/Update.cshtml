@@ -1,0 +1,25 @@
+﻿@model Future
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title">
+        <span class="alert-danger" asp-validation-for="Title"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Icon"></label>
+        <input class="form-control" asp-for="Icon">
+        <span class="alert-danger" asp-validation-for="Icon"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Desc"></label>
+        <input class="form-control" asp-for="Desc">
+        <span class="alert-danger" asp-validation-for="Desc"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

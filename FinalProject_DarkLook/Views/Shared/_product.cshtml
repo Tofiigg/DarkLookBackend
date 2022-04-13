@@ -1,0 +1,35 @@
+﻿@model ICollection<WatchCard>
+
+@foreach (WatchCard watchCard in Model)
+{
+    <div class="product-grid">
+        <div class="item">
+            <div class="product-thumb  mb_30">
+                <div class="image product-imageblock">
+                    <a asp-controller="shop" asp-action="watchDetail" asp-route-id="@watchCard.Id"> <img src="~/images/product/@watchCard.Image" class="img-responsive"> <img src="~/images/product/@watchCard.HoverImage" alt="iPod Classic" title="iPod Classic" class="img-responsive"> </a>
+
+                </div>
+                
+                <div class="caption product-detail text-center">
+                    <div class="rating-block">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (i <= watchCard.Star)
+                            {
+                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                                continue;
+                            }
+                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                        }
+                    </div>
+                    <h6 data-name="product_name" class="product-name"><a asp-controller="=shop" asp-action="watchDetail" asp-route-id="@watchCard.Id" title="Casual Shirt With Ruffle Hem">@watchCard.Desc</a></h6>
+                    <span class="price">
+                        <span class="amount"><span class="currencySymbol">$</span>@watchCard.Price</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}

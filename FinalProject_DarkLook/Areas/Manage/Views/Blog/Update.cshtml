@@ -1,0 +1,56 @@
+﻿@model Blog 
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <img style="max-width:100%" src="~/images/blog/@Model.Image" alt="Alternate Text" />
+        </li>
+    </ul>
+</div>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label asp-for="@Model.Title"></label>
+        <input class="form-control" asp-for="@Model.Title">
+        <span class="alert-danger" asp-validation-for="@Model.Title"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Desc"></label>
+        <input class="form-control" asp-for="@Model.Desc">
+        <span class="alert-danger" asp-validation-for="@Model.Desc"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.Date"></label>
+        <input class="form-control" asp-for="@Model.Date">
+        <span class="alert-danger" asp-validation-for="@Model.Date"></span>
+    </div>
+  
+    <div class="mb-3">
+        <label asp-for="@Model.Info"></label>
+        <input class="form-control" asp-for="@Model.Info">
+        <span class="alert-danger" asp-validation-for="@Model.Info"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.RedSide"></label>
+        <input class="form-control" asp-for="@Model.RedSide">
+        <span class="alert-danger" asp-validation-for="@Model.RedSide"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="@Model.AfterRed"></label>
+        <input class="form-control" asp-for="@Model.AfterRed">
+        <span class="alert-danger" asp-validation-for="@Model.AfterRed"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="@Model.File"></label>
+        <input class="form-control" accept="image/*" asp-for="@Model.File">
+        <span class="alert-danger" asp-validation-for="@Model.File"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

@@ -1,0 +1,42 @@
+﻿@model ICollection<Skills>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1 class="h3 mb-4 text-gray-800">Skills Page</h1>
+
+@if (Model.Count < 6)
+{
+    <div class="d-flex justify-content-end mb-2">
+        <a class="btn btn-primary" asp-action="Create">Create</a>
+    </div>
+}
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">Percent</th>
+            <th scope="col">Settings</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Skills skills in Model)
+        {
+        <tr>
+            <th scope="row">@skills.Id</th>
+            <td>@skills.Name</td>
+
+            <td>@skills.Percent</td>
+            <td>
+                <a class="btn btn-warning" asp-action="Update" asp-route-Id="@skills.Id">Update</a>
+                <a class=" btn btn-danger" asp-action="Delete" asp-route-Id="@skills.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

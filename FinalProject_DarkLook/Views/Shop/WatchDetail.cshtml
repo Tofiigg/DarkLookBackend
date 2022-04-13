@@ -1,0 +1,161 @@
+﻿ @model ProductVM
+@{
+    ViewData["Title"] = "WatchDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row ">
+        <!-- =====  BANNER STRAT  ===== -->
+        <div class="col-sm-12">
+            <div class="breadcrumb ptb_20">
+                <h1>New LCDScreen...</h1>
+                <ul>
+                    <li><a asp-controller="home" asp-action="index">Home</a></li>
+                    <li><a h asp-controller="shop" asp-action="index">Products</a></li>
+                    <li class="active">Detail</li>
+                </ul>
+            </div>
+        </div>
+        <!-- =====  BREADCRUMB END===== -->
+        <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
+            <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
+                <div class="nav-responsive">
+                    <div class="heading-part">
+                        <h2 class="main_title">Top category</h2>
+                    </div>
+                    <ul class="nav  main-navigation collapse in">
+                        @foreach (Category category in Model.Categories)
+                        {
+                            <li><a href="~/#">@category.Name</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="left_banner left-sidebar-widget mt_30 mb_40"> <a href="~/#"><img src="~/images/left1.jpg" alt="Left Banner" class="img-responsive" /></a> </div>
+         
+        </div>
+        <div class="col-sm-8 col-lg-9 mtb_20">
+            <div class="row mt_10 ">
+                <div class="col-md-6">
+                    <div><a class="thumbnails"> <img data-name="product_image" src="~/images/product/@Model.Watchard.Image" alt="" /></a></div>
+                    <div id="product-thumbnail" class="owl-carousel">
+                       
+                        <div class="item">
+                            <div class="image-additional"><a class="thumbnail" href="~/images/product/@Model.Watchard.Image" data-fancybox="group1"> <img src="~/images/product/@Model.Watchard.Image" alt="" /></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 prodetail caption product-thumb">
+                    <h4 data-name="product_name" class="product-name"><a title="Casual Shirt With Ruffle Hem">@Model.Watchard.Desc</a></h4>
+                    <div class="rating-block">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (i <= Model.Watchard.Star)
+                            {
+                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                                continue;
+                            }
+                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                        }
+                    </div>
+                    <span class="price mb_20">
+                        <span class="amount"><span class="currencySymbol">$</span>@Model.Watchard.Price</span>
+                    </span>
+                    <hr>
+                    <ul class="list-unstyled product_info mtb_20">
+                        <li>
+                            <label>Brand:</label>
+                            <span> <a >@Model.Watchard.Brand</a></span>
+                        </li>
+                        <li>
+                            <label>Product Code:</label>
+                            <span> @Model.Watchard.Code</span>
+                        </li>
+                       
+
+
+                        <li>
+                            <label>Availability:</label>
+                            @if (Model.Watchard.Stock == false)
+                            {
+                                <span> Out of Stock</span>
+
+                            }
+                            else
+                            {
+                                <span> In Stock</span>
+
+                            }
+                        </li>
+                    </ul>
+                    <hr>@Model.Watchard.DescDetail</p>
+                    <div id="product">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="Sort-by col-md-6">
+                                    <label>Sort by</label>
+                                    <select name="product_size" id="select-by-size" class="selectpicker form-control">
+                                        @foreach (var size in Model.Watchard.watchSizes)
+                                        {
+                                            <option>@size.Size.Sizes </option>
+
+                                        }
+                                    </select>
+                                </div>
+                                <div class="Color col-md-6">
+                                    <label>Color</label>
+                                    <select name="product_color" id="select-by-color" class="selectpicker form-control">
+                                        @foreach (var colour in Model.Watchard.watchColours)
+                                        {
+                                            <option>@colour.Colour.Name</option>
+
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qty mt_30 form-group2">
+                            <label>Qty</label>
+                            <input name="product_quantity" min="1" value="1" type="number">
+                        </div>
+                        <div class="button-group mt_30">
+                            <a asp-controller="Product" asp-action="AddBasket" asp-route-Id="@Model.Watchard.Id">      <div class="add-to-cart"><span>Add to cart</span></div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading-part text-center mb_10">
+                        <h2 class="main_title mt_50">Related Products</h2>
+                    </div>
+                    <div class="related_pro box">
+                        <div class="product-layout  product-grid related-pro  owl-carousel mb_50 ">
+                            @await Html.PartialAsync("_product", Model.Featured)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="brand_carouse" class="ptb_30 text-center">
+        <div class="type-01">
+            <div class="heading-part mb_10 ">
+                <h2 class="main_title">Brand Logo</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="brand owl-carousel ptb_20">
+
+                        @foreach (BrandLogo brandLogo in Model.BrandLogos)
+                        {
+
+                            <div class="item text-center"> <a href="#"><img src="~/images/brand/@brandLogo.Image" alt="Dell" class="img-responsive" /></a> </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model ICollection<BrandLogo>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-end mb-2">
+    <a class="btn btn-primary" asp-action="Create">Create</a>
+</div>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+
+
+            <th scope="col">Settings</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (BrandLogo brandLogo in Model)
+        {
+            <tr>
+                <th scope="row">@brandLogo.Id</th>
+
+                <td>
+                    <img style=" border-radius: 100%; object-fit: cover; width: 125px; height: 124px;" src="~/images/brand/@brandLogo.Image" alt="Alternate Text" />
+                </td>
+
+                <td>
+                    <a class="btn btn-warning" asp-action="Update" asp-route-Id="@brandLogo.Id">Update</a>
+                    <a class=" btn btn-danger" asp-action="Delete" asp-route-Id="@brandLogo.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

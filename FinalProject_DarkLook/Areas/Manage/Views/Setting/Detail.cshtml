@@ -1,0 +1,27 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <img style="max-width:100%" src="~/images/@Model.Logo" alt="Alternate Text" />
+        </li>
+        <li class="list-group-item">Id: @Model.Id</li>
+        <li class="list-group-item">ADress: @Model.Adress</li>
+        <li class="list-group-item">Street: @Model.Street</li>
+        <li class="list-group-item">Email: @Model.Email</li>
+        <li class="list-group-item">FaceBookUrl: @Model.FacebookUrl</li>
+        <li class="list-group-item">Web: @Model.WebUrl</li>
+        <li class="list-group-item">Twtter: @Model.Twitter</li>
+        <li class="list-group-item">Url: @Model.LastUrl</li>
+        <li class="list-group-item">Number: @Model.Number</li>
+
+    </ul>
+
+    <a class="btn btn-primary" asp-action="Index">Go List</a>
+</div>
+

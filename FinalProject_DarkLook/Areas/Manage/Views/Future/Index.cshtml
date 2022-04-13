@@ -1,0 +1,47 @@
+﻿@model ICollection<Future>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h1 class="h3 mb-4 text-gray-800">Future Page</h1>
+
+@if (Model.Count < 4)
+{
+    <div class="d-flex justify-content-end mb-2">
+        <a class="btn btn-primary" asp-action="Create">Create</a>
+    </div>
+}
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Icon</th>
+            <th scope="col">Desc</th>
+
+            <th scope="col">Settings</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Future future in Model)
+        {
+        <tr>
+            <th scope="row">@future.Id</th>
+            <td>@future.Title</td>
+            <td>@future.Icon</td>
+            <td>@future.Desc</td>
+
+
+
+            <td>
+                <a class="btn btn-warning" asp-action="Update" asp-route-Id="@future.Id">Update</a>
+                <a class=" btn btn-danger" asp-action="Delete" asp-route-Id="@future.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

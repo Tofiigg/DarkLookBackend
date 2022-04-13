@@ -1,0 +1,59 @@
+﻿@model ICollection<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manage/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="h3 mb-4 text-gray-800">OurTeam Page</h1>
+
+
+@if (Model.Count < 1)
+{
+    <div class="d-flex justify-content-end mb-2">
+        <a class="btn btn-primary" asp-action="Create">Create</a>
+    </div>
+}
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">LeftSideImage</th>
+            <th scope="col">Desc</th>
+            <th scope="col">Html</th>
+            <th scope="col">Bootstrap</th>
+            <th scope="col">Css</th>
+
+
+            <th scope="col">Settings</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (About about in Model)
+        {
+            <tr>
+                <th scope="row">@about.Id</th>
+                <td>
+                    <img style="width:200px; height:200px; border-radius:50%" src="~/images/@about.Image" alt="Alternate Text" />
+                </td>
+
+                <td>
+                    <img style="width:200px; height:200px; border-radius:50%" src="~/images/@about.ImageLeftSide" alt="Alternate Text" />
+                </td>
+
+                <td>@about.Desc</td>
+                <td>@about.Html</td>
+                <td>@about.Bootstrap</td>
+                <td>@about.Css</td>
+
+
+
+                <td>
+                    <a class="btn btn-warning" asp-action="Update" asp-route-Id="@about.Id">Update</a>
+                    <a class=" btn btn-danger" asp-action="Delete" asp-route-Id="@about.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
