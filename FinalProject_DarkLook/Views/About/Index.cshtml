@@ -87,26 +87,14 @@
                         <h2 class="main_title">Skills</h2>
                     </div>
                     <div id="p_line">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"> <span class="sr-only">60% Complete</span> </div>
-                            <span class="progress-type">HTML / HTML5</span> <span class="progress-completed">60%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
-                            <span class="progress-type">ASP.Net</span> <span class="progress-completed">40%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> <span class="sr-only">20% Complete (info)</span> </div>
-                            <span class="progress-type">Java</span> <span class="progress-completed">20%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">60% Complete (warning)</span> </div>
-                            <span class="progress-type">JavaScript / jQuery</span> <span class="progress-completed">60%</span>
-                        </div>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> <span class="sr-only">80% Complete (danger)</span> </div>
-                            <span class="progress-type">CSS / CSS3</span> <span class="progress-completed">80%</span>
-                        </div>
+                        @foreach (var item in Model.Skills)
+                        {
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="@item.Percent" aria-valuemin="0" aria-valuemax="100" style="width: @item.Percent%;"> <span class="sr-only">@item.Percent% Complete</span> </div>
+                                <span class="progress-type">@item.Name</span> <span class="progress-completed">@item.Percent%</span>
+                            </div>
+                        }
+
                     </div>
                 </div>
             </div>
@@ -117,71 +105,23 @@
             </div>
             <div class="team_grid box">
                 <div class="team3col  owl-carousel">
-                    <div class="item team-detail">
-                        <div class="team-item-img"> <img src="images/tm1.jpg" alt="" /> </div>
-                        <div class="team-designation mt_20">php Developer</div>
-                        <h4 class="team-title  mtb_10">joseph Lui </h4>
-                        <p>Lorem ipsum dolor sit amet, sea in odio erat, volumu Clita prodesset Rem ipsum dolor s..</p>
-                        <ul class="social mt_20 mb_80">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="item team-detail">
-                        <div class="team-item-img"> <img src="images/tm2.jpg" alt="" /> </div>
-                        <div class="team-designation mt_20">php Developer</div>
-                        <h4 class="team-title  mtb_10">joseph Lui </h4>
-                        <p>Lorem ipsum dolor sit amet, sea in odio erat, volumu Clita prodesset Rem ipsum dolor s..</p>
-                        <ul class="social mt_20 mb_80">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="item team-detail">
-                        <div class="team-item-img"> <img src="images/tm3.jpg" alt="" /> </div>
-                        <div class="team-designation mt_20">php Developer</div>
-                        <h4 class="team-title  mtb_10">joseph Lui </h4>
-                        <p>Lorem ipsum dolor sit amet, sea in odio erat, volumu Clita prodesset Rem ipsum dolor s..</p>
-                        <ul class="social mt_20 mb_80">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="item team-detail">
-                        <div class="team-item-img"> <img src="images/tm4.jpg" alt="" /> </div>
-                        <div class="team-designation mt_20">php Developer</div>
-                        <h4 class="team-title  mtb_10">joseph Lui </h4>
-                        <p>Lorem ipsum dolor sit amet, sea in odio erat, volumu Clita prodesset Rem ipsum dolor s..</p>
-                        <ul class="social mt_20 mb_80">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="item team-detail">
-                        <div class="team-item-img"> <img src="images/tm5.jpg" alt="" /> </div>
-                        <div class="team-designation mt_20">php Developer</div>
-                        <h4 class="team-title  mtb_10">joseph Lui </h4>
-                        <p>Lorem ipsum dolor sit amet, sea in odio erat, volumu Clita prodesset Rem ipsum dolor s..</p>
-                        <ul class="social mt_20 mb_80">
-                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.dribbble.com/" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="https://www.behance.net/" target="_blank"><i class="fa fa-behance"></i></a></li>
-                        </ul>
-                    </div>
+                    @foreach (var item in Model.OurTeams)
+                    {<div class="item team-detail">
+                            <div class="team-item-img"> <img src="~/images/@item.Image" alt="" /> </div>
+                            <div class="team-designation mt_20">@item.Profession</div>
+                            <h4 class="team-title  mtb_10">@item.Name </h4>
+                            <p>@item.Desc</p>
+                            <ul class="social mt_20 mb_80">
+                                <li><a href="@item.FaceBookUrl" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="@item.TwitterUrl" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="@item.BeUrl" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="@item.PinterestUrl" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="@item.BeUrl" target="_blank"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+
+                    }
+
                 </div>
                 <!--End Team Carousel -->
             </div>

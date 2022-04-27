@@ -30,19 +30,19 @@
                     <div class="location mb_50">
                         <h5 class="capitalize mb_20"><strong>Our Location</strong></h5>
                         <div class="address">
-                            @Html.Raw(Model.contact.Location)
+                            @Html.Raw(Model.contact?.Location)
                         </div>
-                        <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>@Model.contact.Number</div>
+                        <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>@Model.contact?.Number</div>
                     </div>
                     <div class="Career mb_50">
                         <h5 class="capitalize mb_20"><strong>Careers</strong></h5>
-                        <div class="address">@Model.contact.Careers</div>
-                        <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="~/mailto:careers@yourdomain.com" target="_top">@Model.contact.Email</a></div>
+                        <div class="address">@Model.contact?.Careers</div>
+                        <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="~/mailto:careers@yourdomain.com" target="_top">@Model.contact?.Email</a></div>
                     </div>
                     <div class="Hello mb_50">
                         <h5 class="capitalize mb_20"><strong>Say Hello</strong></h5>
-                        <div class="address">@Model.contact.SayHello</div>
-                        <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="~/mailto:info@yourdomailname.com" target="_top">@Model.contact.InfoEmail</a></div>
+                        <div class="address">@Model.contact?.SayHello</div>
+                        <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="~/mailto:info@yourdomailname.com" target="_top">@Model.contact?.InfoEmail</a></div>
                     </div>
                 </div>
                 <div class="col-md-8 col-xs-12 contact-form mb_50">
