@@ -8940,11 +8940,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tofiq\\Desktop\\FinalProject_DarkLook\\FinalProject_DarkLook.csproj",
+      "projectUniqueName": "C:\\Users\\Tofiq\\Desktop\\FinalBackend\\DarkLookBackend\\FinalProject_DarkLook\\FinalProject_DarkLook.csproj",
       "projectName": "FinalProject_DarkLook",
-      "projectPath": "C:\\Users\\Tofiq\\Desktop\\FinalProject_DarkLook\\FinalProject_DarkLook.csproj",
+      "projectPath": "C:\\Users\\Tofiq\\Desktop\\FinalBackend\\DarkLookBackend\\FinalProject_DarkLook\\FinalProject_DarkLook.csproj",
       "packagesPath": "C:\\Users\\Tofiq\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tofiq\\Desktop\\FinalProject_DarkLook\\obj\\",
+      "outputPath": "C:\\Users\\Tofiq\\Desktop\\FinalBackend\\DarkLookBackend\\FinalProject_DarkLook\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tofiq\\AppData\\Roaming\\NuGet\\NuGet.Config",

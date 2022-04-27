@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XG3+4aGYDRr/OrFxmlbaI9u/vSsmQxFGev4X99sFalQZi78vZmEvrDZBmqclQxT3MGErTO94etbwuWt/cLpfKw==",
+  "dgSpecHash": "xeZ3Qd+WYiEwK4GJrNMqb1ntUOzV9RYrdJlpdDbCGmRflUHjtpw3Hkk5w6eMXXyoe3D7Ra39KVKP5kWK1JYWzg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tofiq\\Desktop\\FinalProject_DarkLook\\FinalProject_DarkLook.csproj",
+  "projectFilePath": "C:\\Users\\Tofiq\\Desktop\\FinalBackend\\DarkLookBackend\\FinalProject_DarkLook\\FinalProject_DarkLook.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tofiq\\.nuget\\packages\\mailkit\\3.0.0\\mailkit.3.0.0.nupkg.sha512",
     "C:\\Users\\Tofiq\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.19\\microsoft.aspnetcore.cryptography.internal.3.1.19.nupkg.sha512",
